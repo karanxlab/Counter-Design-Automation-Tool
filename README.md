@@ -5,8 +5,8 @@ The core novelty is the optimization layer: rather than generating a naive imple
 Built as a natural extension of Phase I, which handled single counter design. Phase II scales that to complete clock management and frequency synthesis systems.
 What it generates:
 
-Individual counter Verilog modules \\
-Top-level integration module
-Comprehensive SystemVerilog testbench
-Simulation scripts for ModelSim and Vivado
-Resource utilization report (LUTs, flip-flops, power estimate)
+Individual counter Verilog modules ,
+Top-level integration module ,
+Comprehensive SystemVerilog testbench ,
+Simulation scripts for ModelSim and Vivado ,
+Resource utilization report (LUTs, flip-flops, power estimate) 
