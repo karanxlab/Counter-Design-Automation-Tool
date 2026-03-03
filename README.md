@@ -1,8 +1,12 @@
 # Countify : A Multi-Counter System Generator
-Sequential counter design is traditionally a manual, time-intensive process involving state table construction, flip-flop excitation derivation, Boolean minimization, and HDL coding, making it highly prone to human error and inefficiency. To address these limitations, this project proposes a Counter Design Automation Tool that automates the complete sequential counter design workflow from high-level state specifications.
+Countify is a multi-counter system generator that takes a clock frequency and a set of target output frequencies, and automatically builds the hardware for you.
+Instead of manually calculating divide ratios, choosing counter types, and wiring everything together, you describe what you want — input clock, output frequencies, counter style — and Countify figures out the rest. It decides whether to cascade or run counters in parallel based on what is actually efficient for your requirements, then generates clean, simulation-ready Verilog along with testbenches and timing constraints.
+The core novelty is the optimization layer: rather than generating a naive implementation, Countify evaluates multiple architectural configurations and picks the most resource-efficient one before writing a single line of code.
+Built as a natural extension of Phase I, which handled single counter design. Phase II scales that to complete clock management and frequency synthesis systems.
+What it generates:
 
-The proposed system takes a user-defined state sequence and flip-flop type (D, T, JK, SR) as inputs and algorithmically derives present-state/next-state relationships, minimized excitation equations, and finite state machine (FSM) representations. Using symbolic Boolean computation (SymPy) and logic synthesis algorithms, the tool generates optimized logic expressions, which are further translated into gate-level visualizations and synthesizable Verilog code with automated testbenches. An AST-based parsing approach is employed to convert Boolean expressions into hardware-realistic logic diagrams.
-
-The automation framework significantly reduces design time while improving accuracy, reproducibility, and design clarity. By bridging the gap between theoretical sequential logic design and practical hardware implementation, the tool supports digital design education, FPGA prototyping, embedded systems development, and early-stage VLSI workflows. This work demonstrates how algorithm-driven automation can enhance productivity and reliability in sequential circuit design. 
-
-NOT OPEN SOURCE YET.
+Individual counter Verilog modules
+Top-level integration module
+Comprehensive SystemVerilog testbench
+Simulation scripts for ModelSim and Vivado
+Resource utilization report (LUTs, flip-flops, power estimate)
