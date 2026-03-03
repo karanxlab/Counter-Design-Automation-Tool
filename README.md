@@ -10,3 +10,6 @@ Top-level integration module ,
 Comprehensive SystemVerilog testbench ,
 Simulation scripts for ModelSim and Vivado ,
 Resource utilization report (LUTs, flip-flops, power estimate) 
+
+RESEARCH JOURNAL IN PROGRESS 
+NOT OPEN SOURCE YET.
